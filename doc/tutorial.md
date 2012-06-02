@@ -1,2 +1,1 @@
-
-Jobs is a tutorial about Derick Bailey's amazing Marionette framework which sits on top of Backbone. 
+Jobs is a tutorial about Derick Bailey's amazing Marionette framework which sits on top of Backbone.  The idea is to show how Marionette works through a simple application that displays information located in a JSON file.  All visualizations that 
