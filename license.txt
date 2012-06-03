@@ -1,0 +1,7 @@
+// Jobs v0.1.1
+//
+// Copyright (C)2012 Michael I Angerman, Arcadian Group, LLC
+// Distributed Under MIT License
+//
+// Documentation and Full License Available at:
+// http://github.com/stormabq/jobs
