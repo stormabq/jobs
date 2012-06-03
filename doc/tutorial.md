@@ -1,3 +1,5 @@
+#Jobs: A Marionette Tutorial
+
 Jobs is a tutorial about Derick Bailey's amazing [Marionette](https://github.com/derickbailey/backbone.marionette) framework which sits on top of Backbone.  The idea is to show how Marionette works through a simple application that displays information located in a JSON file.  
 
 The code is intentionally simple to follow and understand.  There are two files.
@@ -15,11 +17,15 @@ The Css is based on Bootstrap which most people should already be vaguely famili
 
 To fire up the application on your own simply clone the github repository and bring up your static web server in the directory whre the index.html file is located.
 
-python -m SimpleHTTPServer 3000 
+```bash
+python -m SimpleHTTPServer 3000
+```
+
+Once this is running, go to <http://localhost:3000/>. 
 
 The port number of 3000 is what I use but you can pick any one you want.
 
-The Data Model Part I
+###The Data Model Part I
 
 data:[{
  "uuid":0,
@@ -34,7 +40,7 @@ The data model is intentionally simple because the idea down the road is to use 
 
 You will note that there is on other field called the options field.  This is the field that everyone can change to suit their specific application.  For the jobs data set it makes sense to know what city the job is in and tags or keywords associated with the job title and the job description.  For other domains of knowledge I can envision other option tags that would be suitable.  But the dropdowns will work just fine for the other options tags that you insert instead.  More on this topic later.
 
-The Html file
+###The Html file
 
 In backbone, as everyone already knows, templates are mission critical to the application.  The reason being that it is a combination of your data in the model and the structure of your content on the page that gets melded together to form the final piece of magical HTML that the browser displays.  If you think about what Backbone really does is it provides a simple framework to move data to and from the web page in combination with a template which is a representation of the skeleton content.  Besides this, it makes it really easy to detect user key stokes, hand gestures, and mouse moves via the events.
 
@@ -51,7 +57,7 @@ MenuHeader, MenuDropdown and Content Div Id's
 
 With this in mind, if I describe what each one of the templates does along with the associated code then you should understand the code in detail and be able to go off and write your own application that visualizes a static JSON data file.  The hardest part to visualizing data with backbone is coming up with a generic enough data model that can then be used across other projects. 
 
-The Templates
+###The Templates
 
 The MenuHeader Template and the PageTop Template
 
@@ -69,7 +75,7 @@ Dropdown Descriptions : A name of a description tag that you select in the dropd
 
 If you look at the code you will see that these menu headers get set in the constructor of the Backbone.Model called PageTopModel.
 
-The Data Model Part II
+###The Data Model Part II
 
 The JSON data files are in the directory public/data.
 
@@ -162,7 +168,7 @@ It is the collection returned from these functions represented by the var subset
 
 If you have made it this far in the tutorial you are almost done !
 
-The Two Core Models
+###The Two Core Models
 
 We are only using two models in the system even though there are many more views.  I believe you will find that in Backbone single page applications there are usually more views than models.  I can not think of an example where you would have more models than views unless you are composing models into other models.  To keep this application simple we are only using two models.  Actually there are three, but the third one doesn't really count for now as it is in the "Experimental" section of the application called MiniLayout.
 
