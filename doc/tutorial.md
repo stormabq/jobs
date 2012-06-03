@@ -1,21 +1,25 @@
 #Jobs: A Marionette Tutorial
 
-Jobs is a tutorial about Derick Bailey's amazing [Marionette](https://github.com/derickbailey/backbone.marionette) framework which sits on top of Backbone.  The idea is to show how Marionette works through a simple application that displays information located in a JSON file.  
+Jobs is a tutorial about Derick Bailey's amazing [Marionette](https://github.com/derickbailey/backbone.marionette) framework which sits on top of [Backbone](http://documentcloud.github.com/backbone/).  The goal of the tutorial is to show how Marionette works through a simple application that displays information located in a JSON file.  
 
 The code is intentionally simple to follow and understand.  There are two files.
 
-index.html and jobs.js
+* index.html
+* jobs.js
 
-The dependencies are the standard backbone ones along with handlebars.  The fact that I am using handlebars gives you another example of how to use Marionette with Handlebars.
-Thanks to David Koblas for quickly showing me how to integrate Handlebars into Marionette.  Its two lines of code and you can see it in action in this example.
+The dependencies are the standard Backbone ones along with [Handlebars](http://handlebarsjs.com/).  The fact that I am using Handlebars gives you another example of how to use Marionette with Handlebars.
 
+Thanks goes to Derick Bailey for taking the time to write and maintain Marionette and [David Koblas](https://github.com/koblas) for quickly showing me how to integrate Handlebars into Marionette.  Its two lines of code and you can see it in action in this example.
+
+```js
 Backbone.Marionette.TemplateCache.compileTemplate = function(template) {
     return(Handlebars.compile(template));
 }
+```
 
 The Css is based on Bootstrap which most people should already be vaguely familiar with.
 
-To fire up the application on your own simply clone the github repository and bring up your static web server in the directory whre the index.html file is located.
+To fire up the application on your own simply clone the github repository and bring up your static web server in the directory where the index.html file is located.
 
 ```bash
 python -m SimpleHTTPServer 3000
@@ -27,12 +31,14 @@ The port number of 3000 is what I use but you can pick any one you want.
 
 ###The Data Model Part I
 
+```js
 data:[{
  "uuid":0,
  "url":"http://www.zrato.com",
  "title":"D3 is the core to our visualization framework !",
  "description":"Self starter with some javascript skills in previous projects.",
  "options":{"city":"albuquerque","descriptiontags":["javascript"],"titletags":["d3"]}}
+```
  
 As you can see the data model is pretty simple.  The key pieces of information are the job title with its associated url and the job description.
 
@@ -46,14 +52,16 @@ In backbone, as everyone already knows, templates are mission critical to the ap
 
 In the jobs html file which is called index.html you will see a set of templates that are tied to different functionality in the application.  The only static html in the index.html file are the tabs plus the following three lines of code plus a standard bootstrap footer.  The rest of the HTML in the application are templates.  So the code should be pretty simple to digest and understand if you are so inclined.  That is the idea behind backbone.  Keep it simple and pretty much use all templates for content generation.
 
-The three key lines of code in the HTML file are:
-MenuHeader, MenuDropdown and Content Div Id's
+The three key lines of code in the HTML file are the following div id's:
+MenuHeader, MenuDropdown and Content
 
+```html
 <div class="container">
 	    <div id="menuheader"></div>
 	    <div id="menudropdown"></div>
 		<div id="content" class="content"></div>
 </div>
+```
 
 With this in mind, if I describe what each one of the templates does along with the associated code then you should understand the code in detail and be able to go off and write your own application that visualizes a static JSON data file.  The hardest part to visualizing data with backbone is coming up with a generic enough data model that can then be used across other projects. 
 
@@ -63,15 +71,15 @@ The MenuHeader Template and the PageTop Template
 
 This template only has one parameter in it which is the MenuHeader.  Examples of MenuHeaders include:
 
-Tab 01 : Select a City or Job from the Dropdowns
-Tab 02 : Complete List of Jobs
-Tab 03 : Complete List of Jobs with Descriptions
-Tab 04 : Experimental Section
-Tab 05 : Documenation Section
+* Tab 01 : Select a City or Job from the Dropdowns
+* Tab 02 : Complete List of Jobs
+* Tab 03 : Complete List of Jobs with Descriptions
+* Tab 04 : Experimental Section
+* Tab 05 : Documenation Section
 
-Dropdown Cities : A name of a city that you select in the dropdown
-Dropdown Titles : A name of a title tag that you select in the dropdown
-Dropdown Descriptions : A name of a description tag that you select in the dropdown
+* Dropdown Cities : A name of a city that you select in the dropdown
+* Dropdown Titles : A name of a title tag that you select in the dropdown
+* Dropdown Descriptions : A name of a description tag that you select in the dropdown
 
 If you look at the code you will see that these menu headers get set in the constructor of the Backbone.Model called PageTopModel.
 
@@ -87,7 +95,9 @@ If you are curious to view the JSON data structure I would recommend viewing it 
 
 If you get it working you should see the five top level tags.  Make sure to remove this stuff from the front of the JSON file.
 
+```js
 var mydata =
+```
 
 To review the data model further there are five top level tags in the data model.
 
@@ -95,7 +105,9 @@ I have already reviewed one of the top level tags called "data" above.
 
 One of the other top level tags is
 
+```js
 tags:["lisp","python","handlebars","ruby","d3","ceo","cfo","search","rails"]
+```
 
 However this is really simple to understand because it is not being used, it is here simply for the user edification process to better understand what tags are available in the system.  However, you will note that the titletags and descriptiontags are a subset of the tags which makes sense.  I am showing what tags are possible and then the resulting data set looks for these words in titles and descriptions and comes up with a final result in each one of the numerous data tags.
 
@@ -103,30 +115,37 @@ So we have already reviewed the top level tag "data" and "tags".
 
 The final three remaining tags are 
 
+```js
 cities:["dothan","pittsburgh","cleveland","albuquerque"],
 titletags:["ceo","cfo","d3","python"],
 descriptiontags:["search","handlebars","ruby","rails"]
+```
 
 and this brings us to the menudropdown template which uses these remaining tags to build its structure.
 
-The MenuDropdown Template
+### The MenuDropdown Template
 
 If you have not used [Handlebars](http://handlebarsjs.com/) in the past it is really very simple.  I would go off and take about 10 minutes to read the page and by then you will pretty comfortable understanding the following concept.
 
 This template is fairly simple to understand.  The only minor tricky part is the use of the 
 
+```html
 {{#each city}}
    <li><a href="#city/{{this}}">{{this}}</a></li>
 {{/each}}
+```
 
 As you can see built in to the Handlebars template engine is the each iterator very similar to the one in underscore.  So it reads the cities tag above and generates out HTML for each one of the cities. 
 
 The core view type that the other Marionette views extend from is
 
+```js
 Marionette.View = Backbone.View.extend
+```
 
 One of the most interesting things I do in the code is to over ride the serializeData method which is located in the top level Marionette.View.  The reason I do this is because I did want to introduce yet another model into my code but rather I simply wanted to grab the data I aleady had and since it is static and never changes I figured why not just grab the data with the serializeData method.  This is a nice technique that allows you to get static data from your JSON file if for some reason you find your self needing to do this in your Marionette applications.  Simply override this method and you magically have your data sitting there ready for your view.
 
+```js
 var MenuDropdownView = Backbone.Marionette.ItemView.extend({
   template: "#menudropdown-template",
   
@@ -139,6 +158,7 @@ var MenuDropdownView = Backbone.Marionette.ItemView.extend({
     return(citytitledescription);
   }
 });
+```
 
 If you go back up and review the three key lines of code in the HTML file you will notice that we have now already covered two of the three lines.  The final thing to review is the content.
 
@@ -146,11 +166,11 @@ These templates get executed when you select a city, titletag, or descriptiontag
 
 It should be noted that I am using the Bootstrap Javascript function called [bootstrap-dropdown.js](http://twitter.github.com/bootstrap/javascript.html#dropdowns).  As you can see in order to use this code you simply place the bootstrap.js file in your html file and then use the proper class type in your HTML and you magically get the desired functionality.
 
-The PageJob Template
+### The PageJob Template
 
 The PageJob template is represented by a PageJobView which extends the Backbone.Marionette.ItemView
 
-The PageTop Template
+### The PageTop Template
 
 The PageTop Template uses the Marionette concept of [CompositeViews](http://lostechies.com/derickbailey/2012/04/05/composite-views-tree-structures-tables-and-more/).  If you are not familiar with this concept in Marionette I would go ahead and take another ten minutes and read Derick's excellent description of this concept in his blog.  In there you will find some example JSFiddles which elucidate the power of the CompositeView and in my humble opinion one of the most exciting ways that Backbone is extended today.
 
@@ -160,9 +180,9 @@ The PageJobsView uses as its template the pagetop-template.
 
 One of the interesting aspects of the code is the following three functions which all do the same thing. They take in a collection and returns a subset of the collection with only models that match the specific city tag, title tag, or description tag.
 
-cityFilter
-tagTitleFilter
-tagDescriptionFilter
+* cityFilter
+* tagTitleFilter
+* tagDescriptionFilter
 
 It is the collection returned from these functions represented by the var subset which get passed into the constructor of the PageJobsView along with the model PageTopModel.
 
