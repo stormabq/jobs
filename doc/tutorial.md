@@ -197,3 +197,14 @@ The first model we just discussed above called PageTopModel.
 The second important model is the Job Model.  This model gets populated at initialization time just before the application starts up.
 
 Moving the data from the static JSON file to the Job Model enables a slightly simpler representation of the data.  If you have a JSON file which is slightly more complicated or convoluted and you want to simplify the Model and View representation then populating your Model's by hand is probably the way to go and that is what I am doing to get the data into the Job Model.  I simply iterate over each job in the top level tag called data and then populate the Job model by calling new Job and passing the attributes into the constructor. 
+
+### Bootstrap Configuration
+
+@navbarBackground            #ccf600
+@navbarBackgroundHighlight   #ff200
+@navbarText                  @purple
+@navbarLinkColor             @red
+@navbarLinkColorHover        @green
+
+
+
