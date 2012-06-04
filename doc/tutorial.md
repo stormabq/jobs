@@ -200,11 +200,11 @@ Moving the data from the static JSON file to the Job Model enables a slightly si
 
 ### Bootstrap Configuration
 
-@navbarBackground            #ccf600
-@navbarBackgroundHighlight   #ff200
-@navbarText                  @purple
-@navbarLinkColor             @red
-@navbarLinkColorHover        @green
+* @navbarBackground            #ccf600
+* @navbarBackgroundHighlight   #ff200
+* @navbarText                  @purple
+* @navbarLinkColor             @red
+* @navbarLinkColorHover        @green
 
 
 
