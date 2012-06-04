@@ -2812,15 +2812,15 @@ input[type="submit"].btn.btn-mini {
   min-height: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #ebf400;
-  background-image: -moz-linear-gradient(top, #fff200, #ccf600);
-  background-image: -ms-linear-gradient(top, #fff200, #ccf600);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff200), to(#ccf600));
-  background-image: -webkit-linear-gradient(top, #fff200, #ccf600);
-  background-image: -o-linear-gradient(top, #fff200, #ccf600);
-  background-image: linear-gradient(top, #fff200, #ccf600);
+  background-color: #0055cc;
+  background-image: -moz-linear-gradient(top, #0055cc, #0055cc);
+  background-image: -ms-linear-gradient(top, #0055cc, #0055cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0055cc), to(#0055cc));
+  background-image: -webkit-linear-gradient(top, #0055cc, #0055cc);
+  background-image: -o-linear-gradient(top, #0055cc, #0055cc);
+  background-image: linear-gradient(top, #0055cc, #0055cc);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff200', endColorstr='#ccf600', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0055cc', endColorstr='#0055cc', GradientType=0);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -2835,7 +2835,7 @@ input[type="submit"].btn.btn-mini {
   height: auto;
 }
 .navbar {
-  color: #7a43b6;
+  color: #ffffff;
 }
 .navbar .brand:hover {
   text-decoration: none;
@@ -2848,17 +2848,17 @@ input[type="submit"].btn.btn-mini {
   font-size: 20px;
   font-weight: 200;
   line-height: 1;
-  color: #9d261d;
+  color: #ffffff;
 }
 .navbar .navbar-text {
   margin-bottom: 0;
   line-height: 40px;
 }
 .navbar .navbar-link {
-  color: #9d261d;
+  color: #ffffff;
 }
 .navbar .navbar-link:hover {
-  color: #46a546;
+  color: #000000;
 }
 .navbar .btn,
 .navbar .btn-group {
@@ -2917,8 +2917,8 @@ input[type="submit"].btn.btn-mini {
   font-weight: normal;
   line-height: 1;
   color: #ffffff;
-  background-color: #e8ff77;
-  border: 1px solid #b7dd00;
+  background-color: #4d97ff;
+  border: 1px solid #004ab3;
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
   box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
@@ -2993,7 +2993,7 @@ input[type="submit"].btn.btn-mini {
   float: none;
   padding: 9px 10px 11px;
   line-height: 19px;
-  color: #9d261d;
+  color: #ffffff;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -3009,22 +3009,22 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar .nav > li > a:hover {
   background-color: transparent;
-  color: #46a546;
+  color: #000000;
   text-decoration: none;
 }
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover {
-  color: #46a546;
+  color: #000000;
   text-decoration: none;
-  background-color: #ccf600;
+  background-color: #0055cc;
 }
 .navbar .divider-vertical {
   height: 40px;
   width: 1px;
   margin: 0 9px;
   overflow: hidden;
-  background-color: #ccf600;
-  border-right: 1px solid #fff200;
+  background-color: #0055cc;
+  border-right: 1px solid #0055cc;
 }
 .navbar .nav.pull-right {
   margin-left: 10px;
@@ -3036,18 +3036,18 @@ input[type="submit"].btn.btn-mini {
   padding: 7px 10px;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: #ebf400;
-  background-image: -moz-linear-gradient(top, #fff200, #ccf600);
-  background-image: -ms-linear-gradient(top, #fff200, #ccf600);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff200), to(#ccf600));
-  background-image: -webkit-linear-gradient(top, #fff200, #ccf600);
-  background-image: -o-linear-gradient(top, #fff200, #ccf600);
-  background-image: linear-gradient(top, #fff200, #ccf600);
+  background-color: #0055cc;
+  background-image: -moz-linear-gradient(top, #0055cc, #0055cc);
+  background-image: -ms-linear-gradient(top, #0055cc, #0055cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0055cc), to(#0055cc));
+  background-image: -webkit-linear-gradient(top, #0055cc, #0055cc);
+  background-image: -o-linear-gradient(top, #0055cc, #0055cc);
+  background-image: linear-gradient(top, #0055cc, #0055cc);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff200', endColorstr='#ccf600', GradientType=0);
-  border-color: #ccf600 #ccf600 #8daa00;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0055cc', endColorstr='#0055cc', GradientType=0);
+  border-color: #0055cc #0055cc #003580;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #ccf600;
+  *background-color: #0055cc;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -3060,12 +3060,12 @@ input[type="submit"].btn.btn-mini {
 .navbar .btn-navbar.active,
 .navbar .btn-navbar.disabled,
 .navbar .btn-navbar[disabled] {
-  background-color: #ccf600;
-  *background-color: #b7dd00;
+  background-color: #0055cc;
+  *background-color: #004ab3;
 }
 .navbar .btn-navbar:active,
 .navbar .btn-navbar.active {
-  background-color: #a2c300 \9;
+  background-color: #004099 \9;
 }
 .navbar .btn-navbar .icon-bar {
   display: block;
@@ -4823,14 +4823,14 @@ button.close {
     display: none;
   }
   .nav-collapse .nav .nav-header {
-    color: #7a43b6;
+    color: #ffffff;
     text-shadow: none;
   }
   .nav-collapse .nav > li > a,
   .nav-collapse .dropdown-menu a {
     padding: 6px 15px;
     font-weight: bold;
-    color: #9d261d;
+    color: #ffffff;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -4847,7 +4847,7 @@ button.close {
   }
   .nav-collapse .nav > li > a:hover,
   .nav-collapse .dropdown-menu a:hover {
-    background-color: #ccf600;
+    background-color: #0055cc;
   }
   .nav-collapse.in .btn-group {
     margin-top: 5px;
@@ -4883,8 +4883,8 @@ button.close {
     float: none;
     padding: 9px 15px;
     margin: 9px 0;
-    border-top: 1px solid #ccf600;
-    border-bottom: 1px solid #ccf600;
+    border-top: 1px solid #0055cc;
+    border-bottom: 1px solid #0055cc;
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
