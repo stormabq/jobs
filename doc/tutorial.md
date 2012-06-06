@@ -44,7 +44,7 @@ As you can see the data model is pretty simple.  The key pieces of information a
 
 The data model is intentionally simple because the idea down the road is to use this data model for displaying information in other data domains.  The domains I am interested in besides showing cool jobs available on the web is financial data and bioinformatics data.  But in general the data model is a standard model that is returned from search queries. When you enter a search term in Google, Blekko, Duck Duck Go or your search engine of choice you always get back a URL, the title associated with that URL and a small description of the web site you are in search of.  So the data model we use is very similar and should provide a nice way to take this data model and possibly meld it into your data needs.
 
-You will note that there is on other field called the options field.  This is the field that everyone can change to suit their specific application.  For the jobs data set it makes sense to know what city the job is in and tags or keywords associated with the job title and the job description.  For other domains of knowledge I can envision other option tags that would be suitable.  But the dropdowns will work just fine for the other options tags that you insert instead.  More on this topic later.
+You will note that there is one other field called the options field.  This is the field that everyone can change to suit their specific application.  For the jobs data set it makes sense to know what city the job is in and tags or keywords associated with the job title and the job description.  For other domains of knowledge I can envision other option tags that would be suitable.  But the dropdowns will work just fine for the other options tags that you insert instead.  More on this topic later.
 
 ###The Html file
 
@@ -106,7 +106,7 @@ I have already reviewed one of the top level tags called "data" above.
 One of the other top level tags is
 
 ```js
-tags:["lisp","python","handlebars","ruby","d3","ceo","cfo","search","rails"]
+tags:["backbone","d3","django","handlebars","javascript","node","python","rails","ruby"]
 ```
 
 However this is really simple to understand because it is not being used, it is here simply for the user edification process to better understand what tags are available in the system.  However, you will note that the titletags and descriptiontags are a subset of the tags which makes sense.  I am showing what tags are possible and then the resulting data set looks for these words in titles and descriptions and comes up with a final result in each one of the numerous data tags.
@@ -116,9 +116,9 @@ So we have already reviewed the top level tag "data" and "tags".
 The final three remaining tags are 
 
 ```js
-cities:["dothan","pittsburgh","cleveland","albuquerque"],
-titletags:["ceo","cfo","d3","python"],
-descriptiontags:["search","handlebars","ruby","rails"]
+cities:["austin","boston","newyork","seattle","sfbay"],
+titletags:["backbone","django","javascript","node","python","ruby","rails"],
+descriptiontags:["backbone","d3","django","handlebars","javascript","node","python","rails","ruby"]
 ```
 
 and this brings us to the menudropdown template which uses these remaining tags to build its structure.
@@ -143,7 +143,7 @@ The core view type that the other Marionette views extend from is
 Marionette.View = Backbone.View.extend
 ```
 
-One of the most interesting things I do in the code is to over ride the serializeData method which is located in the top level Marionette.View.  The reason I do this is because I did want to introduce yet another model into my code but rather I simply wanted to grab the data I aleady had and since it is static and never changes I figured why not just grab the data with the serializeData method.  This is a nice technique that allows you to get static data from your JSON file if for some reason you find your self needing to do this in your Marionette applications.  Simply override this method and you magically have your data sitting there ready for your view.
+One of the most interesting things I do in the code is to over ride the serializeData method which is located in the top level Marionette.View.  The reason I do this is because I did not want to introduce yet another model into my code but rather I simply wanted to grab the data I aleady had and since it is static and never changes I figured why not just grab the data with the serializeData method.  This is a nice technique that allows you to get static data from your JSON file if for some reason you find your self needing to do this in your Marionette applications.  Simply override this method and you magically have your data sitting there ready for your view.
 
 ```js
 var MenuDropdownView = Backbone.Marionette.ItemView.extend({
