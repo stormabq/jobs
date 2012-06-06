@@ -241,7 +241,7 @@ var ApplicationRouter = Backbone.Router.extend({
     tab05: function() {
         this.setActiveEntry('#tab05');
         
-        var mypagetop = new PageTopModel({menuheader: 'Documentation Section'}); 
+        var mypagetop = new PageTopModel({menuheader: 'Details about the Project'}); 
         MyApp.menuheaderView = new MenuHeaderView({model: mypagetop});
         MyApp.menuHeaderRegion.show(MyApp.menuheaderView);
         
