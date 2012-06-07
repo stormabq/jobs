@@ -17,7 +17,7 @@ Backbone.Marionette.TemplateCache.compileTemplate = function(template) {
 }
 ```
 
-The Css is based on Bootstrap which most people should already be vaguely familiar with.
+The Css is based on Bootstrap with very minor modifications in a file called jobs.css.  The Bootstrap CSS was built with [Customize](http://twitter.github.com/bootstrap/download.html).  The parameters I input to this web page are at the bottom of this tutorial.  I find that this simple Bootstrap application is the cleanest and simplest way to quickly generate an off the shelf bootstrap file.  The only thing is you have to remember what parameters you used so next time you can generate out the same file if in the future you wish to make modifications to this process.
 
 To fire up the application on your own simply clone the github repository and bring up your static web server in the directory where the index.html file is located.
 
@@ -42,18 +42,15 @@ data:[{
  
 As you can see the data model is pretty simple.  The key pieces of information are the job title with its associated url and the job description.
 
-The data model is intentionally simple because the idea down the road is to use this data model for displaying information in other data domains.  The domains I am interested in besides showing cool jobs available on the web is financial data and bioinformatics data.  But in general the data model is a standard model that is returned from search queries. When you enter a search term in Google, Blekko, Duck Duck Go or your search engine of choice you always get back a URL, the title associated with that URL and a small description of the web site you are in search of.  So the data model we use is very similar and should provide a nice way to take this data model and possibly meld it into your data needs.
+The data model is intentionally simple because the idea down the road is to use this data model for displaying information in other data domains.  The data model is a standard model that is returned from search queries. When you enter a search term in Google, Blekko, Duck Duck Go you always get back a URL, the title associated with that URL and a small description of the web site you are in search of.  So the data model we use is very similar and should provide a nice way to take this data model and possibly meld it into your data needs.
 
-You will note that there is one other field called the options field.  This is the field that everyone can change to suit their specific application.  For the jobs data set it makes sense to know what city the job is in and tags or keywords associated with the job title and the job description.  For other domains of knowledge I can envision other option tags that would be suitable.  But the dropdowns will work just fine for the other options tags that you insert instead.  More on this topic later.
+You will note that there is one other field called the **options** field. In the future, this field will be the one to change for other types of data domains.
 
 ###The Html file
 
-In backbone, as everyone already knows, templates are mission critical to the application.  The reason being that it is a combination of your data in the model and the structure of your content on the page that gets melded together to form the final piece of magical HTML that the browser displays.  If you think about what Backbone really does is it provides a simple framework to move data to and from the web page in combination with a template which is a representation of the skeleton content.  Besides this, it makes it really easy to detect user key stokes, hand gestures, and mouse moves via the events.
+In backbone templates are mission critical to the application.  The reason being that it is a combination of your data in the model and the structure of your content on the page that gets melded together to form the final piece of HTML that the browser displays.
 
-In the jobs html file which is called index.html you will see a set of templates that are tied to different functionality in the application.  The only static html in the index.html file are the tabs plus the following three lines of code plus a standard bootstrap footer.  The rest of the HTML in the application are templates.  So the code should be pretty simple to digest and understand if you are so inclined.  That is the idea behind backbone.  Keep it simple and pretty much use all templates for content generation.
-
-The three key lines of code in the HTML file are the following div id's:
-MenuHeader, MenuDropdown and Content
+The three key lines of code in the HTML file are:
 
 ```html
 <div class="container">
@@ -62,8 +59,6 @@ MenuHeader, MenuDropdown and Content
 		<div id="content" class="content"></div>
 </div>
 ```
-
-With this in mind, if I describe what each one of the templates does along with the associated code then you should understand the code in detail and be able to go off and write your own application that visualizes a static JSON data file.  The hardest part to visualizing data with backbone is coming up with a generic enough data model that can then be used across other projects. 
 
 ###The Templates
 
@@ -87,13 +82,18 @@ If you look at the code you will see that these menu headers get set in the cons
 
 The JSON data files are in the directory public/data.
 
-You will note that there are two files.  The sample file which I am using in this tutorial and the real data file which is what the application is driven off of.  If you want to run the application with the sample file simply change the line of code in the index.html file and you will see the sample data instead of the bigger data set.
+You will note there are two files.
+
+* dataset.js : This is the default file the application is using a large data file currently 1.6M
+* sampledata.js :  If you want to play with the application use this file instead.
+
+Change the one line of code in index.html to switch between the two datasets.
 
 If you are curious to view the JSON data structure I would recommend viewing it in the 
 
 [Json Viewer](http://jsonviewer.stack.hu/)
 
-If you get it working you should see the five top level tags.  Make sure to remove this stuff from the front of the JSON file.
+If you get it working you should see the five top level tags.  Make sure to remove *var mydata =* from the head of the JSON file.
 
 ```js
 var mydata =
