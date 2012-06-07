@@ -196,7 +196,7 @@ If you have made it this far in the tutorial you are almost done !
 
 ###The Two Core Models
 
-We are only using two models in the system even though there are many more views. To keep this application simple we are only using two core models and one experimental model in the "Experimental" section of the application called MiniLayout.
+To keep this application simple we are only using two core models and one experimental model in the "Experimental" section of the application called MiniLayout.
 
 The first model we just discussed above called PageTopModel.
 
