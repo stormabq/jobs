@@ -45,7 +45,7 @@ Once this is running, go to <http://localhost:3000/>.
 
 The port number of 3000 is what I use but you can pick any one you want.
 
-###The Data Model Part I
+###The Data Model
 
 ```js
 data:[{
@@ -94,7 +94,7 @@ This template only has one parameter in it which is the MenuHeader.  Examples of
 
 If you look at the code you will see that these menu headers get set in the constructor of the Backbone.Model called PageTopModel.
 
-###The Data Model Part II
+###The JSON Data Model
 
 The JSON data files are in the directory public/data.
 
@@ -115,19 +115,7 @@ If you get it working you should see the five top level tags.  Make sure to remo
 var mydata =
 ```
 
-To review the data model further there are five top level tags in the data model.
-
-I have already reviewed one of the top level tags called "data" above.
-
-One of the other top level tags is
-
-```js
-tags:["backbone","d3","django","handlebars","javascript","node","python","rails","ruby"]
-```
-
-However this is really simple to understand because it is not being used, it is here simply for the user edification process to better understand what tags are available in the system.  However, you will note that the titletags and descriptiontags are a subset of the tags which makes sense.  I am showing what tags are possible and then the resulting data set looks for these words in titles and descriptions and comes up with a final result in each one of the numerous data tags.
-
-So we have already reviewed the top level tag "data" and "tags".
+To review the data model further there are four top level tags in the data model.
 
 The final three remaining tags are 
 
@@ -137,13 +125,13 @@ titletags:["backbone","django","javascript","node","python","ruby","rails"],
 descriptiontags:["backbone","d3","django","handlebars","javascript","node","python","rails","ruby"]
 ```
 
-and this brings us to the menudropdown template which uses these remaining tags to build its structure.
+and this brings us to the menudropdown template which uses these three remaining tags to build its structure.
 
-### The MenuDropdown Template
+### Handlebars.js and the MenuDropdown Template
 
-If you have not used [Handlebars](http://handlebarsjs.com/) in the past it is really very simple.  I would go off and take about 10 minutes to read the page and by then you will pretty comfortable understanding the following concept.
+This is [Handlebars](http://handlebarsjs.com/) template.
 
-This template is fairly simple to understand.  The only minor tricky part is the use of the 
+This template is fairly simple to understand.
 
 ```html
 {{#each city}}
@@ -153,13 +141,15 @@ This template is fairly simple to understand.  The only minor tricky part is the
 
 As you can see built in to the Handlebars template engine is the each iterator very similar to the one in underscore.  So it reads the cities tag above and generates out HTML for each one of the cities. 
 
+### serializeData
+
 The core view type that the other Marionette views extend from is
 
 ```js
 Marionette.View = Backbone.View.extend
 ```
 
-One of the most interesting things I do in the code is to over ride the serializeData method which is located in the top level Marionette.View.  The reason I do this is because I did not want to introduce yet another model into my code but rather I simply wanted to grab the data I aleady had and since it is static and never changes I figured why not just grab the data with the serializeData method.  This is a nice technique that allows you to get static data from your JSON file if for some reason you find your self needing to do this in your Marionette applications.  Simply override this method and you magically have your data sitting there ready for your view.
+One of the most interesting things I do in the code is to over ride the serializeData method which is located in the top level Marionette.View.  The reason I do this is because I did not want to introduce yet another model into my code but rather I simply wanted to grab the JSON data I aleady have. This is a nice technique that allows you to get static data from your JSON file.  Simply override this method and then you have your data sitting there ready for your view.
 
 ```js
 var MenuDropdownView = Backbone.Marionette.ItemView.extend({
@@ -188,7 +178,7 @@ The PageJob template is represented by a PageJobView which extends the Backbone.
 
 ### The PageTop Template
 
-The PageTop Template uses the Marionette concept of [CompositeViews](http://lostechies.com/derickbailey/2012/04/05/composite-views-tree-structures-tables-and-more/).  If you are not familiar with this concept in Marionette I would go ahead and take another ten minutes and read Derick's excellent description of this concept in his blog.  In there you will find some example JSFiddles which elucidate the power of the CompositeView and in my humble opinion one of the most exciting ways that Backbone is extended today.
+The PageTop Template uses the Marionette concept of [CompositeViews](http://lostechies.com/derickbailey/2012/04/05/composite-views-tree-structures-tables-and-more/).  If you are not familiar with this concept in Marionette I would go ahead and read Derick's excellent description of this concept in his blog.  In there you will find some example JSFiddles which elucidate the power of the CompositeView and in my humble opinion one of the most exciting ways that Backbone is extended today.
 
 This application is yet another example of a way to better understand the CompositeView concept.
 
