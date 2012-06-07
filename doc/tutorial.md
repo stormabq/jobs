@@ -196,13 +196,13 @@ If you have made it this far in the tutorial you are almost done !
 
 ###The Two Core Models
 
-We are only using two models in the system even though there are many more views.  I believe you will find that in Backbone single page applications there are usually more views than models.  I can not think of an example where you would have more models than views unless you are composing models into other models.  To keep this application simple we are only using two models.  Actually there are three, but the third one doesn't really count for now as it is in the "Experimental" section of the application called MiniLayout.
+We are only using two models in the system even though there are many more views. To keep this application simple we are only using two core models and one experimental model in the "Experimental" section of the application called MiniLayout.
 
 The first model we just discussed above called PageTopModel.
 
 The second important model is the Job Model.  This model gets populated at initialization time just before the application starts up.
 
-Moving the data from the static JSON file to the Job Model enables a slightly simpler representation of the data.  If you have a JSON file which is slightly more complicated or convoluted and you want to simplify the Model and View representation then populating your Model's by hand is probably the way to go and that is what I am doing to get the data into the Job Model.  I simply iterate over each job in the top level tag called data and then populate the Job model by calling new Job and passing the attributes into the constructor. 
+Moving the data from the static JSON file to the Job Model simply iterate over each job in the top level tag called data and then populate the Job model by calling new Job and passing the attributes into the constructor. 
 
 ### Bootstrap Customize Configuration Blue Black White
 
