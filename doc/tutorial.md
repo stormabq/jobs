@@ -17,9 +17,23 @@ Backbone.Marionette.TemplateCache.compileTemplate = function(template) {
 }
 ```
 
-The Css is based on Bootstrap with very minor modifications in a file called jobs.css.  The Bootstrap CSS was built with [Customize](http://twitter.github.com/bootstrap/download.html).  The parameters I input to this web page are at the bottom of this tutorial.  I find that this simple Bootstrap application is the cleanest and simplest way to quickly generate an off the shelf bootstrap file.  The only thing is you have to remember what parameters you used so next time you can generate out the same file if in the future you wish to make modifications to this process.
+###CSS
 
-To fire up the application on your own simply clone the github repository and bring up your static web server in the directory where the index.html file is located.
+There are 3 css files located in the directory public/css.
+
+* bootstrap.css [This is the default bootstrap file]
+* bootstrap-responsive.css [This is the default bootstrap file for mobile phones]
+* jobs.css [small 1285 bytes custom css file]
+
+The CSS is based on Bootstrap with very minor modifications in a file called jobs.css.  The Bootstrap CSS was built with [Customize](http://twitter.github.com/bootstrap/download.html).  The parameters I input to this web page are at the bottom of this tutorial.  I find that this simple Bootstrap application is the cleanest and simplest way to quickly generate an off the shelf bootstrap file.  The only thing is you have to remember what parameters you used so next time you can generate out the same file if in the future you wish to make modifications to this process.
+
+### Bringing up the Jobs Application
+
+The application is available live on the internet at this URL: <http://stormabq.github.com/jobs/>.
+
+The beauty and power of Backbone is that you can serve a very fancy, sophisticated application simply with a static web server like [Github:Pages](http://pages.github.com/).
+
+To fire up the application on your own machine simply clone the github repository and bring up your static web server in the directory where the index.html file is located.
 
 ```bash
 python -m SimpleHTTPServer 3000
