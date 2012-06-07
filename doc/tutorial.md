@@ -109,7 +109,7 @@ If you are curious to view the JSON data structure I would recommend viewing it 
 
 [Json Viewer](http://jsonviewer.stack.hu/)
 
-If you get it working you should see the five top level tags.  Make sure to remove *"var mydata ="* from the head of the JSON file.
+If you get it working you should see the four top level tags.  Make sure to remove *"var mydata ="* from the head of the JSON file.
 
 ```js
 var mydata =
@@ -129,7 +129,7 @@ and this brings us to the menudropdown template which uses these three remaining
 
 ### Handlebars.js and the MenuDropdown Template
 
-This is [Handlebars](http://handlebarsjs.com/) template.
+This is a [Handlebars](http://handlebarsjs.com/) template.
 
 This template is fairly simple to understand.
 
@@ -190,7 +190,7 @@ One of the interesting aspects of the code is the following three functions whic
 * tagTitleFilter
 * tagDescriptionFilter
 
-It is the collection returned from these functions represented by the var subset which get passed into the constructor of the PageJobsView along with the model PageTopModel.
+It is the collection returned from these functions represented by the **var subset** which get passed into the constructor of the PageJobsView along with the model PageTopModel.
 
 If you have made it this far in the tutorial you are almost done !
 
@@ -202,7 +202,7 @@ The first model we just discussed above called PageTopModel.
 
 The second important model is the Job Model.  This model gets populated at initialization time just before the application starts up.
 
-Moving the data from the static JSON file to the Job Model simply iterate over each job in the top level tag called data and then populate the Job model by calling new Job and passing the attributes into the constructor. 
+Moving the data from the static JSON file to the Job Model simply iterate over each job in the top level tag called data and then populate the Job model by calling **new Job** and passing the attributes into the constructor. 
 
 ### Bootstrap Customize Configuration Blue Black White
 
