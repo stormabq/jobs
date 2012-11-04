@@ -141,7 +141,7 @@ var ContentView = Backbone.View.extend({
         }
 });
     
-Backbone.Marionette.TemplateCache.compileTemplate = function(template) {
+Backbone.Marionette.TemplateCache.prototype.compileTemplate = function(template) {
     return(Handlebars.compile(template));
 }
 
