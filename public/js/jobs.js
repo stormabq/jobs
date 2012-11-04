@@ -48,12 +48,6 @@ var Jobs = Backbone.Collection.extend({
   }
 });
 
-var MiniLayout = Backbone.Model.extend({});
-
-var MiniLayouts = Backbone.Collection.extend({
-  model: MiniLayout,
-});
-
 var PageTopModel = Backbone.Model.extend({});
 
 /*
