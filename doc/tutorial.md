@@ -12,7 +12,7 @@ The dependencies are the standard Backbone ones along with [Handlebars](http://h
 Thanks goes to Derick Bailey for taking the time to write and maintain Marionette and [David Koblas](https://github.com/koblas) for quickly showing me how to integrate Handlebars into Marionette.  Its two lines of code and you can see it in action in this example.
 
 ```js
-Backbone.Marionette.TemplateCache.compileTemplate = function(template) {
+Backbone.Marionette.TemplateCache.prototype.compileTemplate = function(template) {
     return(Handlebars.compile(template));
 }
 ```
